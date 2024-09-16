@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "github-copilot-for-ai-developers"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+notebook = "^7.2.2"
+pandas = "^2.2.2"
+matplotlib = "^3.9.2"
+seaborn = "^0.13.2"
+scikit-learn = "^1.5.2"
+wordcloud = "^1.9.3"
+transformers = "^4.44.2"
+torch = "^2.4.1"
+torchvision = "^0.19.1"
+torchaudio = "^2.4.1"
+fastapi = "^0.114.2"
+uvicorn = "^0.30.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

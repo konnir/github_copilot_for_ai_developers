@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.title {
+    font-size: 24px;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+#sentence-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#analyze-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+#result-image {
+    height: 100px;
+    margin-top: 20px;
+}

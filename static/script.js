@@ -1,6 +1,7 @@
 document.getElementById('analyze-button').addEventListener('click', async () => {
     const sentence = document.getElementById('sentence-input').value;
 
+    // const response = await fetch(`http://${window.location.hostname}:8000/predict`, {
     const response = await fetch('/predict', {
         method: 'POST',
         headers: {

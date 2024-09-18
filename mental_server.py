@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import random
 import joblib
 from fastapi.responses import FileResponse
+import uvicorn
 
 
 # Define the request model
@@ -25,12 +26,12 @@ app.add_middleware(
 )
 
 # Mount the static files directory to /ui
-app.mount("/ui", StaticFiles(directory="static", html=True), name="static")
 app.mount("/images", StaticFiles(directory="images"), name="images")
+app.mount("/ui", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 async def main():
-    return FileResponse('templates/index.html')
+    return FileResponse('static/index.html')
 
 # Load the model and vectorizer from files
 classifier_load = joblib.load('model/rf/naive_bayes_model.joblib')
@@ -48,3 +49,6 @@ async def predict(request: SentenceRequest):
     prediction = classifier_load.predict(sentence_tfidf)
 
     return {prediction[0]}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8080, log_level="info")

@@ -1,15 +1,16 @@
 document.getElementById('analyze-button').addEventListener('click', async () => {
     const sentence = document.getElementById('sentence-input').value;
 
-    // const response = await fetch(`http://${window.location.hostname}:8000/predict`, {
-    const response = await fetch('/predict', {
+    // const response = await fetch(`http://${window.location.hostname}:8080/predict`, {
+    // const response = await fetch('/predict', {
+    // Automatically use the current protocol (HTTPS)
+    const response = await fetch(`/predict`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({ sentence: sentence })
     });
-
     const data = await response.json();
     const resultTextArray = data;
 
@@ -42,7 +43,7 @@ document.getElementById('analyze-button').addEventListener('click', async () => 
             break;
         default:
             console.error('Unknown result:', resultText);
-            resultImage.src = '';
+            resultImage.src = '/images/logo.webp';
             break;
     }
 });

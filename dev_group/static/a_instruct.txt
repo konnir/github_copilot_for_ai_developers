@@ -1,0 +1,17 @@
+write ui with Mental Sentence Classifier as title,
+below is text box(3 lines), test button, predict button (make space between the buttons).
+When test button is pressed get sentence from /test set the returning value to the text box.
+When predict button is pressed send to the local host /predict and show the result below, big icon below it.
+Make an appropriate icon according to the following answers:
+Anxiety, Bipolar, Depression, Normal, Personality disorder, Stress, Suicidal
+Write your code in index, styles and scripts.
+my scripts and styles are in the static folder.
+my server work on port 8001
+use my server:
+@app.post("/predict")
+def predict(request: TextRequest):
+    prediction = pipeline.predict([request.text])
+    return {"classification": prediction[0]}
+@app.get("/test")
+def get_test_line():
+    return {"line": random.choice(test_lines).strip()}

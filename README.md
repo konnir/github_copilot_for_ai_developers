@@ -2,6 +2,9 @@
 
 This project is a demonstration of GitHub Copilot's capabilities, covering various aspects from exploring AI for mental health statements to model creation, setting up an HTTP server using FastAPI and Uvicorn, and creating a demo UI with HTML and JavaScript.
 
+## Demo:
+https://mental-549164777362.us-central1.run.app (allow few seconds to load)
+
 ## Overview
 
 1. **Data Exploration**: Analyze mental health statements using AI.
